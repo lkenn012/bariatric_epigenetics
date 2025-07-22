@@ -1,0 +1,71 @@
+﻿names,files,condition,patient_IDs
+1_L001_R_quant,C:/User/R/salmon/1_L001_R_quant/quant.sf,Baseline,Bar_190
+2_L001_R_quant,C:/User/R/salmon/2_L001_R_quant/quant.sf,Post Sx,Bar_190
+3_L001_R_quant,C:/User/R/salmon/3_L001_R_quant/quant.sf,Baseline,Bar_191
+4_L001_R_quant,C:/User/R/salmon/4_L001_R_quant/quant.sf,Post Sx,Bar_191
+5_L001_R_quant,C:/User/R/salmon/5_L001_R_quant/quant.sf,Baseline,Bar_192
+6_L001_R_quant,C:/User/R/salmon/6_L001_R_quant/quant.sf,Post Sx,Bar_192
+7_L001_R_quant,C:/User/R/salmon/7_L001_R_quant/quant.sf,Baseline,Bar_193
+8_L001_R_quant,C:/User/R/salmon/8_L001_R_quant/quant.sf,Post Sx,Bar_193
+9_L001_R_quant,C:/User/R/salmon/9_L001_R_quant/quant.sf,Baseline,Bar_194
+10_L001_R_quant,C:/User/R/salmon/10_L001_R_quant/quant.sf,Post Sx,Bar_194
+11_L001_R_quant,C:/User/R/salmon/11_L001_R_quant/quant.sf,Baseline,Bar_195
+12_L001_R_quant,C:/User/R/salmon/12_L001_R_quant/quant.sf,Post Sx,Bar_195
+13_L001_R_quant,C:/User/R/salmon/13_L001_R_quant/quant.sf,Baseline,Bar_196
+14_L001_R_quant,C:/User/R/salmon/14_L001_R_quant/quant.sf,Post Sx,Bar_196
+15_L001_R_quant,C:/User/R/salmon/15_L001_R_quant/quant.sf,Baseline,Bar_198
+16_L001_R_quant,C:/User/R/salmon/16_L001_R_quant/quant.sf,Post Sx,Bar_198
+17_L001_R_quant,C:/User/R/salmon/17_L001_R_quant/quant.sf,Baseline,Bar_199
+18_L001_R_quant,C:/User/R/salmon/18_L001_R_quant/quant.sf,Post Sx,Bar_199
+19_L001_R_quant,C:/User/R/salmon/19_L001_R_quant/quant.sf,Baseline,Bar_200
+20_L001_R_quant,C:/User/R/salmon/20_L001_R_quant/quant.sf,Post Sx,Bar_200
+21_L001_R_quant,C:/User/R/salmon/21_L001_R_quant/quant.sf,Baseline,Bar_201
+22_L001_R_quant,C:/User/R/salmon/22_L001_R_quant/quant.sf,Post Sx,Bar_201
+23_L001_R_quant,C:/User/R/salmon/23_L001_R_quant/quant.sf,Baseline,Bar_202
+24_L001_R_quant,C:/User/R/salmon/24_L001_R_quant/quant.sf,Post Sx,Bar_202
+25_L001_R_quant,C:/User/R/salmon/25_L001_R_quant/quant.sf,Baseline,Bar_203
+26_L001_R_quant,C:/User/R/salmon/26_L001_R_quant/quant.sf,Post Sx,Bar_203
+27_L001_R_quant,C:/User/R/salmon/27_L001_R_quant/quant.sf,Baseline,Bar_204
+28_L001_R_quant,C:/User/R/salmon/28_L001_R_quant/quant.sf,Post Sx,Bar_204
+29_L001_R_quant,C:/User/R/salmon/29_L001_R_quant/quant.sf,Baseline,Bar_205
+30_L001_R_quant,C:/User/R/salmon/30_L001_R_quant/quant.sf,Post Sx,Bar_205
+31_L001_R_quant,C:/User/R/salmon/31_L001_R_quant/quant.sf,Baseline,Bar_206
+32_L001_R_quant,C:/User/R/salmon/32_L001_R_quant/quant.sf,Post Sx,Bar_206
+33_L001_R_quant,C:/User/R/salmon/33_L001_R_quant/quant.sf,Baseline,Bar_207
+34_L001_R_quant,C:/User/R/salmon/34_L001_R_quant/quant.sf,Post Sx,Bar_207
+35_L001_R_quant,C:/User/R/salmon/35_L001_R_quant/quant.sf,Baseline,Bar_208
+36_L001_R_quant,C:/User/R/salmon/36_L001_R_quant/quant.sf,Post Sx,Bar_208
+37_L001_R_quant,C:/User/R/salmon/37_L001_R_quant/quant.sf,Baseline,Bar_209
+38_L001_R_quant,C:/User/R/salmon/38_L001_R_quant/quant.sf,Post Sx,Bar_209
+39_L001_R_quant,C:/User/R/salmon/39_L001_R_quant/quant.sf,Baseline,Bar_210
+40_L001_R_quant,C:/User/R/salmon/40_L001_R_quant/quant.sf,Post Sx,Bar_210
+41_L001_R_quant,C:/User/R/salmon/41_L001_R_quant/quant.sf,Baseline,Bar_211
+42_L001_R_quant,C:/User/R/salmon/42_L001_R_quant/quant.sf,Post Sx,Bar_211
+43_L001_R_quant,C:/User/R/salmon/43_L001_R_quant/quant.sf,Baseline,Bar_213
+44_L001_R_quant,C:/User/R/salmon/44_L001_R_quant/quant.sf,Post Sx,Bar_213
+45_L001_R_quant,C:/User/R/salmon/45_L001_R_quant/quant.sf,Baseline,Bar_214
+46_L001_R_quant,C:/User/R/salmon/46_L001_R_quant/quant.sf,Post Sx,Bar_214
+47_L001_R_quant,C:/User/R/salmon/47_L001_R_quant/quant.sf,Baseline,Bar_215
+48_L001_R_quant,C:/User/R/salmon/48_L001_R_quant/quant.sf,Post Sx,Bar_215
+49_L001_R_quant,C:/User/R/salmon/49_L001_R_quant/quant.sf,Baseline,Bar_216
+50_L001_R_quant,C:/User/R/salmon/50_L001_R_quant/quant.sf,Post Sx,Bar_216
+51_L001_R_quant,C:/User/R/salmon/51_L001_R_quant/quant.sf,Baseline,Bar_218
+52_L001_R_quant,C:/User/R/salmon/52_L001_R_quant/quant.sf,Post Sx,Bar_218
+53_L001_R_quant,C:/User/R/salmon/53_L001_R_quant/quant.sf,Baseline,Bar_219
+54_L001_R_quant,C:/User/R/salmon/54_L001_R_quant/quant.sf,Post Sx,Bar_219
+55_L001_R_quant,C:/User/R/salmon/55_L001_R_quant/quant.sf,Baseline,Bar_221
+56_L001_R_quant,C:/User/R/salmon/56_L001_R_quant/quant.sf,Post Sx,Bar_221
+57_L001_R_quant,C:/User/R/salmon/57_L001_R_quant/quant.sf,Baseline,Bar_222
+58_L001_R_quant,C:/User/R/salmon/58_L001_R_quant/quant.sf,Post Sx,Bar_222
+59_L001_R_quant,C:/User/R/salmon/59_L001_R_quant/quant.sf,Baseline,Bar_223
+60_L001_R_quant,C:/User/R/salmon/60_L001_R_quant/quant.sf,Post Sx,Bar_223
+61_L001_R_quant,C:/User/R/salmon/61_L001_R_quant/quant.sf,Baseline,Bar_225
+62_L001_R_quant,C:/User/R/salmon/62_L001_R_quant/quant.sf,Post Sx,Bar_225
+63_L001_R_quant,C:/User/R/salmon/63_L001_R_quant/quant.sf,Baseline,Bar_226
+64_L001_R_quant,C:/User/R/salmon/64_L001_R_quant/quant.sf,Post Sx,Bar_226
+65_L001_R_quant,C:/User/R/salmon/65_L001_R_quant/quant.sf,Baseline,Bar_227
+66_L001_R_quant,C:/User/R/salmon/66_L001_R_quant/quant.sf,Post Sx,Bar_227
+67_L001_R_quant,C:/User/R/salmon/67_L001_R_quant/quant.sf,Baseline,Bar_229
+68_L001_R_quant,C:/User/R/salmon/68_L001_R_quant/quant.sf,Post Sx,Bar_229
+69_L001_R_quant,C:/User/R/salmon/69_L001_R_quant/quant.sf,Baseline,Bar_230
+70_L001_R_quant,C:/User/R/salmon/70_L001_R_quant/quant.sf,Post Sx,Bar_230
