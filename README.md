@@ -12,7 +12,7 @@ All files used in the analysis (Coming soon)
 ## Environment information
 The following version of R along with all accompanying libraries are used in the code provided here. All code was implemented on Windows with an installation time of approximately 15 minutes, and a total runtime of ~1.5 hours (+5 hours if including all enrichment analyses). Times dependent on workstation specifications.
 
-R  --4.4.  
+R  --4.4.3  
 RStudio  --2024.12.1+563
 
 ### R libraries
