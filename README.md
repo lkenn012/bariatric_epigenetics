@@ -1,6 +1,6 @@
-# Description - Epigenetic reprogramming of skeletal muscle by bariatric surgery
+# Epigenetic reprogramming of skeletal muscle by bariatric surgery
 R code and data for analysis and visualization of integrated transcriptomics & DNA methylation analysis in bariatric surgery
-Forthcoming paper. Harper lab, submitted.
+Forthcoming paper. Harper lab, submitted.  
 🧬📄 Coming soon
 
 ## Code
@@ -12,7 +12,7 @@ All files used in the analysis (Coming soon)
 ## Environment information
 The following version of R along with all accompanying libraries are used in the code provided here. All code was implemented on Windows with an installation time of approximately 15 minutes, and a total runtime of ~1.5 hours (+5 hours if including all enrichment analyses). Times dependent on workstation specifications.
 
-R  --4.4.3
+R  --4.4.  
 RStudio  --2024.12.1+563
 
 ### R libraries
