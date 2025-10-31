@@ -1,4 +1,4 @@
-### Luke Kennedy (July, 2025)
+### Luke Kennedy (Oct, 2025)
 ### Differential gene expression analysis for Pileggi, Mohottalage et al. (2025)
 ##
 ## This code imports transcriptomics data quantified via Salmon and conducts
@@ -12,6 +12,7 @@ library(org.Hs.eg.db)
 library(ggplot2)
 library(ComplexHeatmap)
 library(tidyverse)
+library(clusterProfiler)
 
 #####
 #  Use tximeta to get salmon RNAseq quantification for DEG analysis
@@ -83,7 +84,7 @@ vsd <- vst(dds)
 # use ggplot to visualize paired PCA
 plotPCA(vsd, intgroup=c("condition"), ntop=10000)
 
-pca_data <- plotPCA(vsd, intgroup=c("condition","patient_IDs"), ntop=10000, returnData=TRUE)
+pca_data <- plotPCA(vsd, intgroup=c("condition", "patient_IDs"), ntop=10000, returnData=TRUE)
 percentVar <- round(100 * attr(pca_data, "percentVar"))
 # Define colors for consistency
 group_colours <- c("Baseline" = rgb(255, 203, 106, maxColorValue=255),
@@ -245,3 +246,106 @@ dev.off()
 #####
 ## END-OF: Heatmap of select gene expression sets pre- and post surgery
 #####
+
+#####
+## DEG Enrichment analysis
+#####
+
+# ENSG IDs are prefered over Symbols due to duplicates
+DEG_IDlist <- sig_DEGs %>%
+  dplyr::select("ENSG") %>%
+  dplyr::pull("ENSG") %>%
+  unique()
+
+ego <- enrichGO(gene= DEG_IDlist,
+                OrgDb= org.Hs.eg.db,
+                keyType = "ENSEMBL",
+                ont = "ALL",
+                universe=as.character(degs_df$ENSG)
+)
+
+cluster_summary <- as.data.frame(ego)
+write.csv(cluster_summary, file = "DEG_allGO_enrich.csv", row.names=FALSE)
+
+s_ego <- clusterProfiler::simplify(ego)
+dotplot(ego,showCategory=20,font.size=10,label_format=70)+
+  scale_size_continuous(range=c(1, 7))+
+  theme_minimal() +
+  ggtitle("GO Enrichment of differentially expressed genes (FDR<0.05)")
+
+# KEGG enrichment
+DEG_keggList <- bitr(DEG_IDlist, fromType="ENSEMBL", toType="ENTREZID", 
+                     OrgDb=org.Hs.eg.db)
+all_keggIDs <- bitr(as.character(degs_df$ENSG), fromType="ENSEMBL", 
+                    toType="ENTREZID", OrgDb=org.Hs.eg.db)
+
+eKEGG <- enrichKEGG(gene= DEG_keggList$ENTREZID,
+                    organism= "hsa",
+                    keyType= "ncbi-geneid",
+                    universe=all_keggIDs$ENTREZID
+)
+
+cluster_summary <- as.data.frame(eKEGG)
+write.csv(cluster_summary, file = "DEG_KEGG_enrich.csv", row.names=FALSE)
+tiff("DEG_KEGGenrich.tiff", units="in", width=7, height=4, res=600)
+
+dotplot(eKEGG,showCategory=20,font.size=10,label_format=70)+
+  scale_size_continuous(range=c(1, 7))+
+  theme_classic() +
+  ggtitle("KEGG Enrichment of differentially expressed genes (FDR<0.05)")
+dev.off()
+
+# Up-down gene set overlap plot
+# Identify up- and down-regulated genes
+upDown_DEGs <- degs_df %>%
+  mutate(
+    # Define groups of genes
+    group = case_when(
+      padj < 0.05 & log2FoldChange < 0 ~ "negative DEG",
+      padj < 0.05 & log2FoldChange > 0 ~ "positive DEG",
+      TRUE ~ "not_sig"
+    )
+  ) %>%
+  filter(!grepl("not_sig", group))
+
+upDown_list <- list(upDown_DEGs[upDown_DEGs$group == "positive DEG", "ENSG"], 
+                    upDown_DEGs[upDown_DEGs$group == "negative DEG", "ENSG"])
+names(upDown_list)<-c("Up-regulated","Down-regulated")
+
+cclust<-compareCluster(ENSG~group, data=upDown_DEGs,
+                       fun = enrichGO,
+                       OrgDb= org.Hs.eg.db,
+                       keyType = "ENSEMBL",
+                       ont= "BP",
+                       universe=as.character(degs_df$ENSG))
+
+tiff("DEG_splitBPenrich.tiff", units="in", width=7, height=7, res=600)
+dotplot(cclust,showCategory=15, label_format=60) +
+  theme_minimal()
+dev.off()
+
+cluster_summary <- as.data.frame(cclust)
+write.csv(cluster_summary, file = "DEG_splitBPenrich.csv", row.names=FALSE)
+
+# Repeat for KEGG
+upDown_keggList <- bitr(upDown_DEGs$ENSG, fromType="ENSEMBL", toType="ENTREZID", 
+                        OrgDb=org.Hs.eg.db)
+
+# some ensembl have multiple NCBI for the same protein, remove any duplicates
+upDown_keggList <- upDown_keggList %>%
+  distinct(ENSEMBL, .keep_all = TRUE)
+
+upDown_DEGs$group <- as.factor(upDown_DEGs$group) # Explicitly convert 'group' to factor
+upDown_DEGs$ENTREZ <- as.character(upDown_keggList$ENTREZID)
+
+cclust<-compareCluster(ENTREZ~group, data=upDown_KEGG,
+                       fun = enrichKEGG,
+                       organism = "hsa",
+                       universe=all_keggIDs$ENTREZID)
+tiff("DEG_splitKEGGenrich.tiff", units="in", width=7, height=7, res=600)
+dotplot(cclust,showCategory=15, label_format=60) +
+  theme_minimal()
+dev.off()
+cluster_summary <- as.data.frame(cclust)
+write.csv(cluster_summary, file = "DEG_splitKEGGenrich.csv", row.names=FALSE)
+
